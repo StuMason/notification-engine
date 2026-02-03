@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Events;
 
 use App\Models\VideoRoom;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Collection;
 
 class VideoRoomStarted
 {
