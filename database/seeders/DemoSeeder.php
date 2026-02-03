@@ -180,11 +180,11 @@ class DemoSeeder extends Seeder
 
         // --- System Alert ---
         SystemAlertBroadcast::dispatch(
-            hotel: $hotel,
-            title: 'Scheduled Maintenance',
-            message: 'The booking system will be offline for maintenance tonight from 2 AM to 4 AM.',
-            targetRoles: [UserRole::Admin, UserRole::Manager, UserRole::Staff],
-            sender: $admin,
+            $hotel,
+            'Scheduled Maintenance',
+            'The booking system will be offline for maintenance tonight from 2 AM to 4 AM.',
+            [UserRole::Admin, UserRole::Manager, UserRole::Staff],
+            $admin,
         );
     }
 

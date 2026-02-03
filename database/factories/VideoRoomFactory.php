@@ -22,7 +22,7 @@ class VideoRoomFactory extends Factory
 
         return [
             'hotel_id' => $hotel,
-            'name' => fake()->words(3, true) . ' Room',
+            'name' => fake()->words(3, true).' Room',
             'started_by' => User::factory()->state(fn () => ['hotel_id' => $hotel]),
             'status' => VideoRoomStatus::Active,
         ];

@@ -16,7 +16,7 @@ class HotelFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->company() . ' Hotel',
+            'name' => fake()->company().' Hotel',
             'timezone' => fake()->timezone(),
         ];
     }

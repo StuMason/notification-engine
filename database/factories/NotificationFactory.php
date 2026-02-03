@@ -28,7 +28,7 @@ class NotificationFactory extends Factory
             'event_type' => EventType::TaskAssigned,
             'entity_type' => EntityType::Task,
             'entity_id' => Str::uuid()->toString(),
-            'deep_link' => '/agenda/tasks/' . Str::uuid()->toString(),
+            'deep_link' => '/agenda/tasks/'.Str::uuid()->toString(),
             'title' => fake()->sentence(4),
             'message' => fake()->sentence(),
             'context_json' => null,

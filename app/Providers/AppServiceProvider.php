@@ -12,7 +12,7 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Register any application services.
      */
-        public function register(): void
+    public function register(): void
     {
         // Register Telescope only when Redis extension is available
         // This prevents build failures during package:discover

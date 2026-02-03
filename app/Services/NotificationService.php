@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Services;
 
-use App\Enums\EntityType;
 use App\Enums\EventType;
 use App\Events\NotificationCreated;
 use App\Models\Hotel;

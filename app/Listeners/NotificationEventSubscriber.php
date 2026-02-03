@@ -168,7 +168,6 @@ class NotificationEventSubscriber
     /**
      * Register the listeners for the subscriber.
      *
-     * @param  Dispatcher  $events
      * @return array<string, string>
      */
     public function subscribe(Dispatcher $events): array
