@@ -16,7 +16,7 @@
         "laravel/reverb": "^1.7",
         "laravel/sanctum": "^4.0",
         "laravel/telescope": "^5.16",
-        "laravel/tinker": "^2.10.1",
+        "laravel/tinker": "^3.0.2",
         "laravel/wayfinder": "^0.1.13",
         "sqids/sqids": "^0.5.0",
         "stumason/claudavel": "^1.5"
