@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Inertia\Response;
+use Laravel\Horizon\Contracts\MasterSupervisorRepository;
+use Laravel\Horizon\Horizon;
+use Laravel\Reverb\ReverbServiceProvider;
 
 class HealthCheckController extends Controller
 {
@@ -33,11 +36,11 @@ class HealthCheckController extends Controller
             'storage' => $this->checkStorage(),
         ];
 
-        if (class_exists(\Laravel\Reverb\ReverbServiceProvider::class)) {
+        if (class_exists(ReverbServiceProvider::class)) {
             $checks['reverb'] = $this->checkReverb();
         }
 
-        if (class_exists(\Laravel\Horizon\Horizon::class)) {
+        if (class_exists(Horizon::class)) {
             $checks['horizon'] = $this->checkHorizon();
         }
 
@@ -243,7 +246,7 @@ class HealthCheckController extends Controller
         $start = microtime(true);
 
         try {
-            $masters = app(\Laravel\Horizon\Contracts\MasterSupervisorRepository::class)->all();
+            $masters = app(MasterSupervisorRepository::class)->all();
             $latency = (microtime(true) - $start) * 1000;
 
             if (count($masters) > 0) {

@@ -5,6 +5,10 @@ declare(strict_types=1);
 namespace App\Services;
 
 use App\Enums\EntityType;
+use App\Models\ChatMessage;
+use App\Models\Meeting;
+use App\Models\Task;
+use App\Models\VideoRoom;
 use Illuminate\Database\Eloquent\Model;
 
 class DeepLinkResolver
@@ -31,10 +35,10 @@ class DeepLinkResolver
     public function resolveEntityType(Model $entity): EntityType
     {
         return match ($entity::class) {
-            \App\Models\Task::class => EntityType::Task,
-            \App\Models\Meeting::class => EntityType::Meeting,
-            \App\Models\ChatMessage::class => EntityType::ChatMessage,
-            \App\Models\VideoRoom::class => EntityType::VideoRoom,
+            Task::class => EntityType::Task,
+            Meeting::class => EntityType::Meeting,
+            ChatMessage::class => EntityType::ChatMessage,
+            VideoRoom::class => EntityType::VideoRoom,
             default => EntityType::System,
         };
     }
